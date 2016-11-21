@@ -1,0 +1,32 @@
+@import "./base";
+.tab-wrapper{
+    margin: 100px auto;
+    width: 980px;
+    .tab-item-wrapper{
+        height: 30px;
+        overflow: hidden;
+        .tab-item{
+            height: 30px;
+            width: 90px;
+            line-height: 30px;
+            float: left;
+            text-align: center;
+            padding: 0 8px;
+            font-size: 14px;
+            color: #333;
+            background: #e0e0e0;
+            cursor: pointer;
+        }
+        .selected{
+            background: pink;
+        }
+    }
+    .tab-content{
+        height: 200px;
+        width: 600px;
+        padding: 10px;
+        font-size: 14px;
+        color: #000;
+        background: #F0F0F0;
+    }
+}

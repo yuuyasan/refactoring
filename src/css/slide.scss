@@ -1,0 +1,108 @@
+@import "base";
+$change:all 0.5s linear;
+.main-slide-wrapper{
+    margin: 100px auto;
+    width: 600px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    .main-slide {
+        width: 600px;
+        height: 300px;
+        position: relative;
+        transition: all 0.3s;
+        -moz-transition: all 0.3s linear; /* Firefox 4 */
+        -webkit-transition: all 0.3s linear; /* Safari 和 Chrome */
+        -o-transition: all 0.3s linear; /* Opera */
+        .slide-item {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 600px;
+            height: 300px;
+            z-index: 1;
+            opacity: 0;
+            transition: $change;
+            -moz-transition: $change; /* Firefox 4 */
+            -webkit-transition: $change; /* Safari 和 Chrome */
+            -o-transition: $change; /* Opera */
+
+            img {
+                width: 600px;
+                height: 300px;
+            }
+
+        }
+        .show{
+            z-index: 10;
+            opacity: 1;
+        }
+
+
+    }
+    .switch-wrapper{
+        position: absolute;
+        width: 600px;
+        height: 300px;
+        top: 0;
+        left: 0;
+        .switch-btn{
+            display: none;
+            position: absolute;
+            height: 80px;
+            width: 50px;
+            line-height: 80px;
+            background: #e0e0e0;
+            cursor: pointer;
+            top: 50%;
+            margin-top: -40px;
+            z-index: 11;
+            text-align: center;
+            &:after{
+                font-size: 50px;
+                color: #fff;
+            }
+        }
+        .left{
+            left: 0;
+            &:after{
+                content: '‹';
+            }
+        }
+        .right{
+            right: 0;
+            &:after{
+                content: '›';
+            }
+        }
+        .nav-wrapper{
+            position: absolute;
+            width: 600px;
+            bottom: 10px;
+            text-align: center;
+            overflow: hidden;
+
+            z-index: 11;
+            .nav-item{
+                display: inline-block;
+               width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                background: #fff;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            .active{
+                background: #999;
+            }
+        }
+
+    }
+    &:hover{
+        .switch-btn{
+            display: block;
+            z-index: 11;
+        }
+    }
+}
